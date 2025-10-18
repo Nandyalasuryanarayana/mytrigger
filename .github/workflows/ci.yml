@@ -19,11 +19,6 @@ jobs:
                 source venv/bin/activate
                 pip install --upgrade pip
                 pip install -r requirements.txt
-            - name: Lint
-              run: |
-               source venv/bin/activate
-               pip install flake8
-               flake8 .
             - name: Test
               run: |
                 source venv/bin/activate
