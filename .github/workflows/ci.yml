@@ -24,6 +24,8 @@ jobs:
                 source venv/bin/activate
                 python manage.py test
             - name: security-checks
-              run: pip-audit
+              run: |
+                pip install pip-audit
+                pip-audit
             - name: build
               run: python setup.py sdist bdist_wheel
