@@ -1,0 +1,33 @@
+name: trigger
+on: 
+    push:
+        branches: 
+            master
+jobs:
+    job1:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v5
+            - name: set up python
+              uses: actions/setup-python@v6 
+              with:
+                python-version: 'pypy3.10'
+            - name: Install dependencies
+              run: |
+                python -m venv venv
+                source venv/bin/activate
+                pip install -r requirements.txt
+            - name: Lint
+              run: |
+               source venv/bin/activate
+               pip install flake8
+               flake8 .
+            - name: Test
+              run: |
+                source venv/bin/activate
+                python manage.py test
+            - name: security-checks
+              run: pip-audit
+            - name: build
+              run: python setup.py sdist bdist_wheel
