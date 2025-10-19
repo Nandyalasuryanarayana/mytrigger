@@ -116,15 +116,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = "/static/"
 
 # Directory for base dirs
 STATICFILES_DIRS = [
-    BASE_DIR == '/trigger /static'
+    BASE_DIR /"trigger" /"static" ,
 ]
 
 # staticfiles
-STATIC_ROOT = '/static'
+STATIC_ROOT = BASE_DIR/"staticfiles"
 
 
 # Default primary key field type
