@@ -23,6 +23,10 @@ jobs:
               run: |
                 source venv/bin/activate
                 python manage.py test
+            - name: setup-tools
+              run: |
+                 pip uninstall setuptools -y
+                 pip install setuptools
             - name: security-checks
               run: |
                 pip install --upgrade pip
