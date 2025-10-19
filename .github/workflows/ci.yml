@@ -24,11 +24,6 @@ jobs:
               run: |
                 source venv/bin/activate
                 python manage.py test
-            - name: reinstall pip
-              run: |
-                python -m ensurepip --upgrade
-                python -m pip install pip==25.2.1
-                pip --version
             - name: security-checks
               run: |
                 source venv/bin/activate
