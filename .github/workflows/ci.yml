@@ -17,21 +17,12 @@ jobs:
               run: |
                 python -m venv venv
                 source venv/bin/activate
-                pip install django==5.2.7
-                python -m django --version
-                python -m ensurepip
-                python -m pip install --upgrade pip
-                pip --version
+                pip install --upgrade pip
                 pip install -r requirements.txt
             - name: Test
               run: |
                 source venv/bin/activate
                 python manage.py test
-            - name: setup-tools
-              run: |
-                 source venv/bin/activate
-                 pip uninstall setuptools -y
-                 pip install setuptools
             - name: security-checks
               run: |
                 source venv/bin/activate
