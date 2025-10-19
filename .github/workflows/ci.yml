@@ -12,11 +12,12 @@ jobs:
             - name: set up python
               uses: actions/setup-python@v6 
               with:
-                run: python-version == 3.13
+                python-version: 3.13
             - name: Install dependencies
               run: |
                 python -m venv venv
                 source venv/bin/activate
+                pip install --upgrade django
                 pip uninstall pip -y
                 python -m ensurepip
                 python -m pip install --upgrade pip
