@@ -3,6 +3,7 @@ on:
     push:
         branches: 
             master
+    workflow_dispatch: 
 jobs:
     job1:
         runs-on: ubuntu-22.04
@@ -26,7 +27,7 @@ jobs:
             - name: reinstall pip
               run: |
                 python -m ensurepip --upgrade
-                python -m pip install --upgrade pip
+                python -m pip install pip==25.2.1
                 pip --version
             - name: security-checks
               run: |
