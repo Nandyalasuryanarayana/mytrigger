@@ -33,6 +33,7 @@ jobs:
               run: |
                 source venv/bin/activate
                 pip install pip-audit
-                pip-audit
+                pip-audit -r requirements.txt
             - name: build
-              run: python setup.py sdist bdist_wheel
+              run: |
+                python manage.py collectstatic
