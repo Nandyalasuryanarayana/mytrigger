@@ -17,7 +17,7 @@ jobs:
                 source venv/bin/activate
                 pip uninstall pip -y
                 python -m ensurepip
-                python -m pip install pip==25.2
+                python -m pip install --upgrade pip
                 pip --version
                 pip install -r requirements.txt
             - name: Test
@@ -26,10 +26,12 @@ jobs:
                 python manage.py test
             - name: setup-tools
               run: |
+                 source venv/bin/activate
                  pip uninstall setuptools -y
                  pip install setuptools
             - name: security-checks
               run: |
+                source venv/bin/activate
                 pip install pip-audit
                 pip-audit
             - name: build
