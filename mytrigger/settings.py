@@ -119,10 +119,10 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 # Directory for base dirs
-STATICFILES_DIRS = [
-    BASE_DIR / "trigger" / "static" ,
-    
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "trigger" / "static" ,
+
+# ]
 
 # staticfiles
 STATIC_ROOT = BASE_DIR / "staticfiles"
