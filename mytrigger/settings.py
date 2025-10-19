@@ -118,6 +118,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Directory for base dirs
+STATICFILES_DIRS = [
+    BASE_DIR == '/trigger /static'
+]
+
+# staticfiles
+STATIC_ROOT = '/static'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
